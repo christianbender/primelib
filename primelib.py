@@ -141,6 +141,10 @@ def primeFactorization(number):
 
     quotient = number
     
+    # for negative numbers
+    if number < 0:
+        number *= -1
+    
     if not isPrime(number):
     
         while (quotient != 1):
