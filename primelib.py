@@ -1,12 +1,5 @@
 # -*- coding: utf-8 -*-
 """
-Created on Thu Oct  5 18:30:51 2017
-
-@author: christian
-"""
-
-# -*- coding: utf-8 -*-
-"""
 Created on Thu Oct  5 16:44:23 2017
 
 @author: Christian Bender
@@ -124,14 +117,14 @@ def getPrimeNumbers(N):
     
 def primeFactorization(number):
     """
-        input: integer 'number' > 1
+        input: integer 'number' 
         returns a list of the prime number factors of 'number'
     """
 
     import math    # for function sqrt
     
     # precondition
-    assert(isinstance(number,int) and (number > 1))
+    assert(isinstance(number,int))
     
     ans = [] # this list will be returns of the function.
 
@@ -139,16 +132,16 @@ def primeFactorization(number):
 
     factor = 2    
 
-    quotient = number
-    
     # for negative numbers
     if number < 0:
         number *= -1
+        
+    quotient = number
     
     if not isPrime(number):
     
         while (quotient != 1):
-        
+            
             if isPrime(factor) and (quotient % factor == 0):
                     ans.append(factor)
                     quotient /= factor
