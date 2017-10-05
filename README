@@ -59,7 +59,7 @@ This function is more efficient as function sieveEr(...)
 
 primeFactorization (number)
 
-input: integer 'number' > 1
+input: integer 'number' 
 returns a list of the prime number factors of 'number'
 
 -------------------------------
