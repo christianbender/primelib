@@ -33,7 +33,7 @@ Overview about functions:
 
 isPrime (number)
 
-input: positive integer 'number'
+input: positive integer 'number'.
 returns true if 'number' is prime otherwise false.
 
 -------------------------
@@ -50,8 +50,8 @@ sieve of erathostenes.
 
 getPrimeNumbers (N)
 
-input: positive integer 'N' > 2
-returns a list of prime numbers from 2 up to N (inclusive)
+input: positive integer 'N' > 2. 
+returns a list of prime numbers from 2 up to N (inclusive). 
 This function is more efficient as function sieveEr(...)
 
 
@@ -59,60 +59,60 @@ This function is more efficient as function sieveEr(...)
 
 primeFactorization (number)
 
-input: integer 'number' > 1
+input: integer 'number' > 1. 
 returns a list of the prime number factors of 'number'
 
 -------------------------------
 
 greatestPrimeFactor (number)
 
-input: integer 'number' > 1
+input: integer 'number' > 1. 
 returns the greatest prime number factor of 'number'
 
 ---------------------------------
 
 smallestPrimeFactor (number)
 
-input: integer 'number' > 1
+input: integer 'number' > 1. 
 returns the smallest prime number factor of 'number'
 
 ----------------------------------
 
 isEven (number)
 
-input: integer 'number'
+input: integer 'number'. 
 returns true if 'number' is even, otherwise false.
 
 -----------------------------------
 
 isOdd (number)
 
-input: integer 'number'
+input: integer 'number'. 
 returns true if 'number' is odd, otherwise false.
 
 ------------------------------------
 
 ggT (number1, number2)
 
-Greatest common divisor
+Greatest common divisor. 
 
-input: two positive integer 'number1' and 'number2'
+input: two positive integer 'number1' and 'number2'. 
 returns the greatest common divisor of 'number1' and 'number2'
 
 -------------------------------------
 
 kgV (number1, number2)
 
-Least common multiple
+Least common multiple. 
 
-input: two positive integer 'number1' and 'number2'
-returns the least common multiple of 'number1' and 'number2'
+input: two positive integer 'number1' and 'number2'. 
+returns the least common multiple of 'number1' and 'number2'. 
 
 ---------------------------------------
 
 goldbach(number)
 
-Goldbach's assumption
+Goldbach's assumption. 
 
-input: a even positive integer 'number' > 2
-returns a list of two prime numbers whose sum is equal to 'number'
+input: a even positive integer 'number' > 2. 
+returns a list of two prime numbers whose sum is equal to 'number'. 
