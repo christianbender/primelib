@@ -89,6 +89,15 @@ returns the n-th prime number, beginning at index 0
 
 -------------------------------------
 
+getPrimesBetween (pNumber1, pNumber2)
+
+input: prime numbers 'pNumber1' and 'pNumber2'
+precondition: pNumber1 < pNumber2
+returns a list of all prime numbers between 'pNumber1' (exclusiv)
+        and 'pNumber2' (exclusiv) 
+
+--------------------------------------
+
 isEven (number)
 
 input: integer 'number'

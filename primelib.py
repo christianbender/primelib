@@ -7,6 +7,7 @@ Created on Thu Oct  5 16:44:23 2017
 This python library contains some useful functions to deal with
 prime numbers and whole numbers.
 
+
 Overview:
 
 isPrime(number)
@@ -16,6 +17,7 @@ primeFactorization(number)
 greatestPrimeFactor(number)
 smallestPrimeFactor(number)
 getPrime(n)
+getPrimesBetween(pNumber1, pNumber2) 
 
 ----
 
@@ -105,6 +107,8 @@ def getPrimeNumbers(N):
     
     ans = []    
     
+    # iterates over all numbers between 2 up to N+1 
+    # if a number is prime then appends to list 'ans'
     for number in range(2,N+1):
         
         if isPrime(number):
@@ -139,7 +143,7 @@ def primeFactorization(number):
         
     quotient = number
     
-    
+    # if 'number' not prime then builds the prime factorization of 'number'
     if not isPrime(number):
     
         while (quotient != 1):
@@ -232,6 +236,7 @@ def goldbach(number):
     
     ans = [] # this list will returned
     
+    # creates a list of prime numbers between 2 up to 'number'
     primeNumbers = getPrimeNumbers(number)
     lenPN = len(primeNumbers)    
 
@@ -379,4 +384,39 @@ def getPrime(n):
         while not isPrime(ans):
             ans += 1
     
+    return ans
+    
+# ---------------------------------------------------
+    
+def getPrimesBetween(pNumber1, pNumber2):
+    """
+        input: prime numbers 'pNumber1' and 'pNumber2'
+                pNumber1 < pNumber2
+        returns a list of all prime numbers between 'pNumber1' (exclusiv)
+                and 'pNumber2' (exclusiv) 
+    """
+    
+    # precondition
+    assert(isPrime(pNumber1) and isPrime(pNumber2) and (pNumber1 < pNumber2))
+    
+    number = pNumber1 + 1 # jump to the next number
+    
+    ans = [] # this list will be returns.
+    
+    # if number is not prime then
+    # fetch the next prime number. 
+    while not isPrime(number):
+        number += 1
+    
+    while number < pNumber2:
+        
+        ans.append(number)
+        
+        number += 1
+        
+        # fetch the next prime number. 
+        while not isPrime(number):
+            number += 1
+            
+    # 'ans' contains not 'pNumber1' and 'pNumber2' !
     return ans
