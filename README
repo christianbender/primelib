@@ -78,6 +78,15 @@ returns the smallest prime number factor of 'number'
 
 ----------------------------------
 
+getPrime (n)
+
+Gets the n-th prime-number. 
+
+input: positive integer 'n' >= 0
+returns the n-th prime number, beginning at index 0
+
+-------------------------------------
+
 isEven (number)
 
 input: integer 'number'

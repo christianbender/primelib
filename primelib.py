@@ -15,6 +15,7 @@ getPrimeNumbers(N)
 primeFactorization(number)
 greatestPrimeFactor(number)
 smallestPrimeFactor(number)
+getPrime(n)
 
 ----
 
@@ -137,6 +138,7 @@ def primeFactorization(number):
         number *= -1
         
     quotient = number
+    
     
     if not isPrime(number):
     
@@ -351,3 +353,30 @@ def kgV(number1, number2):
                     
     return ans
     
+# ----------------------------------
+    
+def getPrime(n):
+    """
+        Gets the n-th prime number.
+        input: positive integer 'n' >= 0
+        returns the n-th prime number, beginning at index 0
+    """
+    
+    # precondition
+    assert(isinstance(n,int) and (n >= 0))
+    
+    index = 0
+    ans = 2 # this variable holds the answer
+    
+    while index < n:
+        
+        index += 1
+        
+        ans += 1   # counts to the next number     
+        
+        # if ans not prime then
+        # runs to the next prime number. 
+        while not isPrime(ans):
+            ans += 1
+    
+    return ans
