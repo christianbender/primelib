@@ -7,7 +7,6 @@ Created on Thu Oct  5 16:44:23 2017
 This python library contains some useful functions to deal with
 prime numbers and whole numbers.
 
-
 Overview:
 
 isPrime(number)
@@ -40,7 +39,8 @@ def isPrime(number):
     import math # for function sqrt
     
     # precondition
-    assert(isinstance(number,int) and (number >= 0))
+    assert isinstance(number,int) and (number >= 0) , \
+    "'number' must been an int and positive"
     
     status = True
     
@@ -55,6 +55,9 @@ def isPrime(number):
         if number % divisor == 0:
             status = False
             break
+    
+    # precondition
+    assert isinstance(status,bool), "'status' must been from type bool"    
     
     return status
 
@@ -71,7 +74,7 @@ def sieveEr(N):
     """
     
     # precondition
-    assert(isinstance(N,int) and (N > 2))
+    assert isinstance(N,int) and (N > 2), "'N' must been an int and > 2"
     
     # beginList: conatins all natural numbers from 2 upt to N
     beginList = [x for x in range(2,N+1)]
@@ -90,6 +93,9 @@ def sieveEr(N):
     # filters actual prime numbers.           
     ans = [x for x in beginList if x != 0]
     
+    # precondition
+    assert isinstance(ans,list), "'ans' must been from type list"    
+    
     return ans
     
 
@@ -103,7 +109,7 @@ def getPrimeNumbers(N):
     """    
     
     # precondition
-    assert(isinstance(N,int) and (N > 2))
+    assert isinstance(N,int) and (N > 2), "'N' must been an int and > 2"
     
     ans = []    
     
@@ -114,7 +120,10 @@ def getPrimeNumbers(N):
         if isPrime(number):
             
             ans.append(number)
-            
+   
+    # precondition
+    assert isinstance(ans,list), "'ans' must been from type list"
+        
     return ans
 
 
@@ -122,14 +131,15 @@ def getPrimeNumbers(N):
     
 def primeFactorization(number):
     """
-        input: integer 'number' 
+        input: positive integer 'number' 
         returns a list of the prime number factors of 'number'
     """
 
     import math    # for function sqrt
     
     # precondition
-    assert(isinstance(number,int))
+    assert isinstance(number,int) and number >= 0, \
+    "'number' must been an int and >= 0"
     
     ans = [] # this list will be returns of the function.
 
@@ -137,14 +147,15 @@ def primeFactorization(number):
 
     factor = 2    
 
-    # for negative numbers
-    if number < 0:
-        number *= -1
-        
     quotient = number
     
-    # if 'number' not prime then builds the prime factorization of 'number'
-    if not isPrime(number):
+    
+    if number == 0 or number == 1:
+        
+        ans.append(number)
+        
+    # if 'number' not prime then builds the prime factorization of 'number'    
+    elif not isPrime(number):
     
         while (quotient != 1):
             
@@ -157,6 +168,9 @@ def primeFactorization(number):
     else:
         ans.append(number)
     
+    # precondition
+    assert isinstance(ans,list), "'ans' must been from type list"    
+    
     return ans
     
 
@@ -164,17 +178,25 @@ def primeFactorization(number):
     
 def greatestPrimeFactor(number):
     """
-        input: integer 'number' > 1
+        input: positive integer 'number' >= 0
         returns the greatest prime number factor of 'number'
     """
     
     # precondition
-    assert(isinstance(number,int) and (number > 1))
+    assert isinstance(number,int) and (number >= 0), \
+    "'number' bust been an int and >= 0"
+    
+    ans = 0    
     
     # prime factorization of 'number'
     primeFactors = primeFactorization(number)
+
+    ans = max(primeFactors)     
     
-    return max(primeFactors)
+    # precondition
+    assert isinstance(ans,int), "'ans' must been from type int"    
+    
+    return ans
     
 
 # ----------------------------------------------
@@ -182,17 +204,25 @@ def greatestPrimeFactor(number):
     
 def smallestPrimeFactor(number):
     """
-        input: integer 'number' > 1
+        input: integer 'number' >= 0
         returns the smallest prime number factor of 'number'
     """
     
     # precondition
-    assert(isinstance(number,int) and (number > 1))
+    assert isinstance(number,int) and (number >= 0), \
+    "'number' bust been an int and >= 0"
+    
+    ans = 0    
     
     # prime factorization of 'number'
     primeFactors = primeFactorization(number)
     
-    return min(primeFactors)
+    ans = min(primeFactors)
+
+    # precondition
+    assert isinstance(ans,int), "'ans' must been from type int"    
+    
+    return ans
     
     
 # ----------------------
@@ -204,7 +234,8 @@ def isEven(number):
     """   
 
     # precondition
-    assert(isinstance(number, int))    
+    assert isinstance(number, int), "'number' must been an int" 
+    assert isinstance(number % 2 == 0, bool), "compare bust been from type bool"
     
     return number % 2 == 0
     
@@ -217,7 +248,8 @@ def isOdd(number):
     """   
 
     # precondition
-    assert(isinstance(number, int))    
+    assert isinstance(number, int), "'number' must been an int" 
+    assert isinstance(number % 2 != 0, bool), "compare bust been from type bool"
     
     return number % 2 != 0
     
@@ -232,7 +264,8 @@ def goldbach(number):
     """
     
     # precondition
-    assert(isinstance(number,int) and (number > 2) and isEven(number))
+    assert isinstance(number,int) and (number > 2) and isEven(number), \
+    "'number' must been an int, even and > 2"
     
     ans = [] # this list will returned
     
@@ -264,6 +297,11 @@ def goldbach(number):
             
         i += 1
         
+    # precondition
+    assert isinstance(ans,list) and (len(ans) == 2) and \
+    (ans[0] + ans[1] == number) and isPrime(ans[0]) and isPrime(ans[1]), \
+    "'ans' must contains two primes. And sum of elements must been eq 'number'"
+        
     return ans
     
 # ----------------------------------------------
@@ -276,8 +314,9 @@ def ggT(number1,number2):
     """
     
     # precondition
-    assert(isinstance(number1,int) and isinstance(number2,int) \
-    and (number1 >= 0) and (number2 >= 0))
+    assert isinstance(number1,int) and isinstance(number2,int) \
+    and (number1 >= 0) and (number2 >= 0), \
+    "'number1' and 'number2' must been positive integer."
 
     rest = 0    
     
@@ -286,6 +325,10 @@ def ggT(number1,number2):
         rest = number1 % number2
         number1 = number2
         number2 = rest
+
+    # precondition
+    assert isinstance(number1,int) and (number1 >= 0), \
+    "'number' must been from type int and positive"    
     
     return number1
     
@@ -299,8 +342,9 @@ def kgV(number1, number2):
     """
     
     # precondition
-    assert(isinstance(number1,int) and isinstance(number2,int) \
-    and (number1 >= 1) and (number2 >= 1))
+    assert isinstance(number1,int) and isinstance(number2,int) \
+    and (number1 >= 1) and (number2 >= 1), \
+    "'number1' and 'number2' must been positive integer."
     
     ans = 1 # actual answer that will be return.
      
@@ -355,7 +399,11 @@ def kgV(number1, number2):
                 ans *= n
                     
             done.append(n)
-                    
+    
+    # precondition
+    assert isinstance(ans,int) and (ans >= 0), \
+    "'ans' must been from type int and positive"    
+    
     return ans
     
 # ----------------------------------
@@ -368,7 +416,7 @@ def getPrime(n):
     """
     
     # precondition
-    assert(isinstance(n,int) and (n >= 0))
+    assert isinstance(n,int) and (n >= 0), "'number' must been a positive int"
     
     index = 0
     ans = 2 # this variable holds the answer
@@ -384,6 +432,10 @@ def getPrime(n):
         while not isPrime(ans):
             ans += 1
     
+    # precondition
+    assert isinstance(ans,int) and isPrime(ans), \
+    "'ans' must been a prime number and from type int"    
+    
     return ans
     
 # ---------------------------------------------------
@@ -397,7 +449,8 @@ def getPrimesBetween(pNumber1, pNumber2):
     """
     
     # precondition
-    assert(isPrime(pNumber1) and isPrime(pNumber2) and (pNumber1 < pNumber2))
+    assert isPrime(pNumber1) and isPrime(pNumber2) and (pNumber1 < pNumber2), \
+    "The arguments must been prime numbers and 'pNumber1' < 'pNumber2'"
     
     number = pNumber1 + 1 # jump to the next number
     
@@ -417,6 +470,11 @@ def getPrimesBetween(pNumber1, pNumber2):
         # fetch the next prime number. 
         while not isPrime(number):
             number += 1
+            
+    # precondition
+    assert isinstance(ans,list) and ans[0] != pNumber1 \
+    and ans[len(ans)-1] != pNumber2, \
+    "'ans' must been a list without the arguments"
             
     # 'ans' contains not 'pNumber1' and 'pNumber2' !
     return ans

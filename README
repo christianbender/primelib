@@ -61,21 +61,21 @@ This function is more efficient as function sieveEr(...)
 
 primeFactorization (number)
 
-input: integer 'number' 
+input: positive integer 'number' 
 returns a list of the prime number factors of 'number'
 
 -------------------------------
 
 greatestPrimeFactor (number)
 
-input: integer 'number' > 1
+input: integer 'number' >= 0
 returns the greatest prime number factor of 'number'
 
 ---------------------------------
 
 smallestPrimeFactor (number)
 
-input: integer 'number' > 1
+input: integer 'number' >= 0
 returns the smallest prime number factor of 'number'
 
 ----------------------------------
