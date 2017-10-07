@@ -24,6 +24,8 @@ isEven(number)
 isOdd(number)
 ggT(number1, number2)  // greatest common divisor
 kgV(number1, number2)  // least common multiple
+getDivisors(number)    // all divisors of 'number' inclusive 1, number
+isPerfectNumber(number)
 
 -----
 
@@ -478,3 +480,56 @@ def getPrimesBetween(pNumber1, pNumber2):
             
     # 'ans' contains not 'pNumber1' and 'pNumber2' !
     return ans
+    
+# ----------------------------------------------------
+
+def getDivisors(n):
+    """
+        input: positive integer 'n' >= 1
+        returns all divisors of n (inclusive 1 and 'n')
+    """
+    
+    # precondition
+    assert isinstance(n,int) and (n >= 1), "'n' must been int and >= 1"
+
+    from math import sqrt        
+        
+    ans = [] # will be returned.
+    
+    for divisor in range(1,n+1):
+        
+        if n % divisor == 0:
+            ans.append(divisor)
+       
+       
+    #precondition
+    assert ans[0] == 1 and ans[len(ans)-1] == n, \
+    "Error in function getDivisiors(...)"
+    
+    
+    return ans
+
+
+# ----------------------------------------------------
+
+
+def isPerfectNumber(number):
+    """
+        input: positive integer 'number' > 1
+        returns true if 'number' is a perfect number otherwise false.
+    """
+    
+    # precondition
+    assert isinstance(number,int) and (number > 1), \
+    "'number' must been an int and >= 1"
+    
+    divisors = getDivisors(number)
+ 
+    # precondition
+    assert isinstance(divisors,list) and(divisors[0] == 1) and  \
+    (divisors[len(divisors)-1] == number), \
+    "Error in help-function getDivisiors(...)"
+    
+    # summed all divisors up to 'number' (exclusive), hence [:-1]
+    return sum(divisors[:-1]) == number
+        

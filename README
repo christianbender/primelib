@@ -128,6 +128,20 @@ Least common multiple
 input: two positive integer 'number1' and 'number2'
 returns the least common multiple of 'number1' and 'number2'
 
+-----------------------------------------
+
+getDivisors (number)
+
+input: positive integer 'n' >= 1
+returns all divisors of n (inclusive 1 and 'number')
+
+-------------------------------------------
+
+isPerfectNumber (number)
+
+input: positive integer 'number' > 1
+returns true if 'number' is a perfect number otherwise false.
+
 ---------------------------------------
 
 goldbach(number)
