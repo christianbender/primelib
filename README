@@ -112,7 +112,7 @@ returns true if 'number' is odd, otherwise false.
 
 ------------------------------------
 
-ggT (number1, number2)
+gcd (number1, number2)
 
 Greatest common divisor
 
@@ -130,6 +130,8 @@ returns the least common multiple of 'number1' and 'number2'
 
 -----------------------------------------
 
+NEW-FUNCTION
+
 getDivisors (number)
 
 input: positive integer 'n' >= 1
@@ -137,12 +139,44 @@ returns all divisors of n (inclusive 1 and 'number')
 
 -------------------------------------------
 
+NEW-FUNCTIONS
+
 isPerfectNumber (number)
 
 input: positive integer 'number' > 1
 returns true if 'number' is a perfect number otherwise false.
 
 ---------------------------------------
+
+NEW-FUNCTION
+
+simplifyFraction (numerator, denominator)
+
+input: two integer 'numerator' and 'denominator'
+assumes: 'denominator' != 0
+returns: a tuple with simplify numerator and denominator.
+
+----------------------------------------------
+
+NEW-FUNCTION
+
+factorial (n)
+
+input: positive integer 'n'
+returns the factorial of 'n' (n!)
+
+
+-----------------------------------------------
+
+NEW-FUNCTION
+
+fib (n)
+
+input: positive integer 'n'
+returns the n-th fibonacci term , indexing by 0
+
+
+-----------------------------------------------
 
 goldbach(number)
 

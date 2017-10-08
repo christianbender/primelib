@@ -22,10 +22,16 @@ getPrimesBetween(pNumber1, pNumber2)
 
 isEven(number)
 isOdd(number)
-ggT(number1, number2)  // greatest common divisor
+gcd(number1, number2)  // greatest common divisor
 kgV(number1, number2)  // least common multiple
 getDivisors(number)    // all divisors of 'number' inclusive 1, number
 isPerfectNumber(number)
+
+NEW-FUNCTIONS
+
+simplifyFraction(numerator, denominator)
+factorial (n) // n!
+fib (n) // calculate the n-th fibonacci term.
 
 -----
 
@@ -308,7 +314,7 @@ def goldbach(number):
     
 # ----------------------------------------------
 
-def ggT(number1,number2):
+def gcd(number1,number2):
     """
         Greatest common divisor
         input: two positive integer 'number1' and 'number2'
@@ -532,4 +538,68 @@ def isPerfectNumber(number):
     
     # summed all divisors up to 'number' (exclusive), hence [:-1]
     return sum(divisors[:-1]) == number
+
+# ------------------------------------------------------------
+
+def simplifyFraction(numerator, denominator):
+    """
+        input: two integer 'numerator' and 'denominator'
+        assumes: 'denominator' != 0
+        returns: a tuple with simplify numerator and denominator.
+    """      
+    
+    # precondition
+    assert isinstance(numerator, int) and isinstance(denominator,int) \
+    and (denominator != 0), \
+    "The arguments must been from type int and 'denominator' != 0"
+    
+    # build the greatest common divisor of numerator and denominator.
+    gcdOfFraction = gcd(abs(numerator), abs(denominator))
+
+    # precondition
+    assert isinstance(gcdOfFraction, int) and (numerator % gcdOfFraction == 0) \
+    and (denominator % gcdOfFraction == 0), \
+    "Error in function gcd(...,...)"
+    
+    return (numerator // gcdOfFraction, denominator // gcdOfFraction)
+    
+# -----------------------------------------------------------------
+    
+def factorial(n):
+    """
+        input: positive integer 'n'
+        returns the factorial of 'n' (n!)
+    """
+    
+    # precondition
+    assert isinstance(n,int) and (n >= 0), "'n' must been a int and >= 0"
+    
+    ans = 1 # this will be return.
+    
+    for factor in range(1,n+1):
+        ans *= factor
+    
+    return ans
+    
+# -------------------------------------------------------------------
+    
+def fib(n):
+    """
+        input: positive integer 'n'
+        returns the n-th fibonacci term , indexing by 0
+    """  
+    
+    # precondition
+    assert isinstance(n, int) and (n >= 0), "'n' must been an int and >= 0"
+    
+    tmp = 0
+    fib1 = 1
+    ans = 1 # this will be return
+    
+    for i in range(n-1):
         
+        tmp = ans
+        ans += fib1
+        fib1 = tmp
+        
+    return ans
