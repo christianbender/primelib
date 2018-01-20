@@ -39,14 +39,14 @@ Overview about functions:
 
 -------------------------
 
-isPrime (number)
+    isPrime (number)
 
 input: positive integer 'number'
 returns true if 'number' is prime otherwise false.
 
 -------------------------
 
-sieveEr (N)
+    sieveEr (N)
 
 input: positive integer 'N' > 2
 returns a list of prime numbers from 2 up to N.
@@ -56,7 +56,7 @@ sieve of erathostenes.
 
 ---------------------------
 
-getPrimeNumbers (N)
+    getPrimeNumbers (N)
 
 input: positive integer 'N' > 2
 returns a list of prime numbers from 2 up to N (inclusive)
@@ -65,28 +65,28 @@ This function is more efficient as function sieveEr(...)
 
 ----------------------------
 
-primeFactorization (number)
+    primeFactorization (number)
 
 input: positive integer 'number' 
 returns a list of the prime number factors of 'number'
 
 -------------------------------
 
-greatestPrimeFactor (number)
+    greatestPrimeFactor (number)
 
 input: integer 'number' >= 0
 returns the greatest prime number factor of 'number'
 
 ---------------------------------
 
-smallestPrimeFactor (number)
+    smallestPrimeFactor (number)
 
 input: integer 'number' >= 0
 returns the smallest prime number factor of 'number'
 
 ----------------------------------
 
-getPrime (n)
+    getPrime (n)
 
 Gets the n-th prime-number. 
 
@@ -95,7 +95,7 @@ returns the n-th prime number, beginning at index 0
 
 -------------------------------------
 
-getPrimesBetween (pNumber1, pNumber2)
+    getPrimesBetween (pNumber1, pNumber2)
 
 input: prime numbers 'pNumber1' and 'pNumber2'
 precondition: pNumber1 < pNumber2
@@ -104,21 +104,21 @@ returns a list of all prime numbers between 'pNumber1' (exclusiv)
 
 --------------------------------------
 
-isEven (number)
+    isEven (number)
 
 input: integer 'number'
 returns true if 'number' is even, otherwise false.
 
 -----------------------------------
 
-isOdd (number)
+    isOdd (number)
 
 input: integer 'number'
 returns true if 'number' is odd, otherwise false.
 
 ------------------------------------
 
-gcd (number1, number2)
+    gcd (number1, number2)
 
 Greatest common divisor
 
@@ -127,7 +127,7 @@ returns the greatest common divisor of 'number1' and 'number2'
 
 -------------------------------------
 
-kgV (number1, number2)
+    kgV (number1, number2)
 
 Least common multiple
 
@@ -136,27 +136,21 @@ returns the least common multiple of 'number1' and 'number2'
 
 -----------------------------------------
 
-NEW-FUNCTION
-
-getDivisors (number)
+    getDivisors (number)
 
 input: positive integer 'n' >= 1
 returns all divisors of n (inclusive 1 and 'number')
 
 -------------------------------------------
 
-NEW-FUNCTIONS
-
-isPerfectNumber (number)
+    isPerfectNumber (number)
 
 input: positive integer 'number' > 1
 returns true if 'number' is a perfect number otherwise false.
 
 ---------------------------------------
 
-NEW-FUNCTION
-
-simplifyFraction (numerator, denominator)
+    simplifyFraction (numerator, denominator)
 
 input: two integer 'numerator' and 'denominator'
 assumes: 'denominator' != 0
@@ -164,9 +158,7 @@ returns: a tuple with simplify numerator and denominator.
 
 ----------------------------------------------
 
-NEW-FUNCTION
-
-factorial (n)
+    factorial (n)
 
 input: positive integer 'n'
 returns the factorial of 'n' (n!)
@@ -174,9 +166,7 @@ returns the factorial of 'n' (n!)
 
 -----------------------------------------------
 
-NEW-FUNCTION
-
-fib (n)
+    fib (n)
 
 input: positive integer 'n'
 returns the n-th fibonacci term , indexing by 0
@@ -184,7 +174,7 @@ returns the n-th fibonacci term , indexing by 0
 
 -----------------------------------------------
 
-goldbach(number)
+    goldbach(number)
 
 Goldbach's assumption
 
