@@ -1,4 +1,4 @@
-Free open-source library from Christian Bender
+# Primelib
 
 This python library contains some useful functions to deal with
 prime numbers and whole numbers. 
@@ -8,24 +8,30 @@ Important primelib.py or primelib.pyc must been in your project directory.
 
 Example: (In your project)
 
+```python
 import primelib
 
 print primelib.isPrime(13)   // will print out 'True'
 print primelib.primeFactorization(40)  // will print out [2,2,2,5]
+```
 
 OR 
 
+```python
 from primelib import *
 
 print isPrime(...) 
+```
 
 More information about the functions.
-
+```python
 help(function_name)
+```
 
 For example:
-
+```python
 help(isPrime)
+```
 
 ---------------------------
 
