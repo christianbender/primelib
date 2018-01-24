@@ -11,8 +11,8 @@ Example: (In your project)
 ```python
 import primelib
 
-print primelib.isPrime(13)   // will print out 'True'
-print primelib.primeFactorization(40)  // will print out [2,2,2,5]
+print primelib.isPrime(13)   # will print out 'True'
+print primelib.primeFactorization(40)  # will print out [2,2,2,5]
 ```
 
 OR 
